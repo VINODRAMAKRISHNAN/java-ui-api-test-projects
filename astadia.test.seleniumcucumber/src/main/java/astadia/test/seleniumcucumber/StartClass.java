@@ -20,7 +20,7 @@ public class StartClass {
 	public static void main(String[] args) {
 		
 		
-		File file = new File("F:\\mybrowsers\\edge\\MicrosoftWebDriver.exe");
+		/*File file = new File("F:\\mybrowsers\\edge\\MicrosoftWebDriver.exe");
 
 	    System.setProperty("webdriver.edge.driver", file.getAbsolutePath());
 	    DesiredCapabilities capabilities = DesiredCapabilities.edge();
@@ -33,14 +33,7 @@ public class StartClass {
 	    WebDriver driver = new EdgeDriver(capabilities);
 		System.out.println("vinod1");
 		
-		/*try {
-			Thread.sleep(1000); // in milliseconds=1 sec
-			//Thread.sleep(10000);
-			//driver.wait(200);
-		}
-		catch(Exception ex) {
-			
-		}*/
+		
 		System.out.println("vinod2");
 		driver.get("http://www.yahoo.com");
 		System.out.println("vinod3");
@@ -50,18 +43,12 @@ public class StartClass {
 		
 		driver.get("http://www.google.com/");
 		String getTitl3 = driver.getTitle();
-		//driver.navigate().to("http://localhost:97/");
 		
-		/* System.setProperty("webdriver.ie.driver.extractpath", "F:\\Study\\");
-		 System.setProperty("webdriver.ie.driver", "F:\\mychrome\\IEDriverServer.exe");
-		 System.setProperty("webdriver.ie.logfile", "F:\\mychrome\\IEDriverServer.log");
-		 InternetExplorerDriver driver = new InternetExplorerDriver();
-		 driver.get("http://www.google.com");*/
 		 driver.quit();
 		System.out.println("site1: " + getTitle);
 		System.out.println("site2 " + getTitle2);
 		System.out.println("site3 " + getTitl3);
-		System.out.println("vinod4");
+		System.out.println("vinod4");*/
 		
 	}
 
