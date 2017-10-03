@@ -1,0 +1,71 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>astadia.test</groupId>
+  <artifactId>astadia.test.webdrivers</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>astadia.test.webdrivers</name>
+  <description>astadia.test.webdrivers</description>
+  <properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+	</properties>
+  
+	 <dependencies>
+   <dependency>  
+		<groupId>org.seleniumhq.selenium</groupId>
+		      <artifactId>selenium-java</artifactId>
+		      <version>LATEST</version>
+		</dependency>  
+		<dependency>  
+		      <groupId>org.seleniumhq.selenium</groupId>
+		      <artifactId>selenium-server</artifactId>
+		      <version>LATEST</version>
+		</dependency>  
+		<dependency>
+		    <groupId>org.seleniumhq.selenium</groupId>
+		    <artifactId>selenium-firefox-driver</artifactId>
+		    <version>LATEST</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.seleniumhq.selenium</groupId>
+		    <artifactId>selenium-opera-driver</artifactId>
+		    <version>LATEST</version>
+		</dependency>
+		
+	<!-- 	<dependency>  
+		      <groupId>org.seleniumhq.selenium</groupId>
+		      <artifactId>selenium-api</artifactId>
+		      <version>3.4.0</version>
+		</dependency>
+		
+		<dependency>  
+		      <groupId>org.seleniumhq.selenium</groupId>
+		      <artifactId>selenium-common</artifactId>
+		      <version>2.0b1</version>
+		</dependency>   -->
+  </dependencies>
+
+  
+	<build>
+		<plugins>
+			
+			<plugin>
+				 <groupId>org.apache.maven.plugins</groupId>
+			    <artifactId>maven-compiler-plugin</artifactId>
+			    <version>3.7.0</version>
+			</plugin>
+			<!-- Below plug-in is used to execute tests -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+			    <artifactId>maven-surefire-plugin</artifactId>
+			    <version>2.20</version>		
+			    <configuration>
+					<includes>**/*TestRunner.java</includes>
+				</configuration>		
+			</plugin>
+		</plugins>
+	</build>
+  
+</project>
