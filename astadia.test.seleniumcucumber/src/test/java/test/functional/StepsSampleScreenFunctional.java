@@ -16,7 +16,7 @@ public class  StepsSampleScreenFunctional{
 	@Before
     public void setUp(){
 		appTestManager = new AppTestManager();
-		appTestManager.initBrowser1();
+		appTestManager.initBrowser();
     }
 
     @After

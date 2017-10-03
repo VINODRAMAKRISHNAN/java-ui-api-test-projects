@@ -1,30 +1,38 @@
 package astadia.test.seleniumcucumber.components;
 
-import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.remote.CapabilityType;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.*;
+
+
 
 import java.awt.Toolkit;
-import java.io.File;
-import java.util.concurrent.TimeUnit;
 
-import org.openqa.selenium.WebDriver;
+
+
 import org.openqa.selenium.*;
 import org.openqa.selenium.ie.*;
-import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.*;
+import org.openqa.selenium.chrome.*;
+import org.openqa.selenium.opera.*;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.*;
+
 import com.google.common.base.Strings;
 
 public class AppTestManager {
-	
+	private String BROWSER=System.getProperty("browser");
 	RemoteWebDriver driver = null;
 	String strtrace = "";
 	String output = "";
 	Boolean isError=false;
 
+	private String getBrowser() {
+		if (Strings.isNullOrEmpty(BROWSER) ) {
+			return "";
+		}
+		else {
+			return BROWSER.toLowerCase();
+		}
+	}
 	public String getTrce() {
 		   return strtrace;
 	} 
@@ -46,18 +54,34 @@ public class AppTestManager {
 		
 		
 	}
-	public void initBrowser1() {
-		
-	 	FirefoxOptions options = new FirefoxOptions();
-		//options.setCapability(InternetExplorerDriver.INITIAL_BROWSER_URL.toString(), "");
-		//options.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS.toString(), true);
-		//options.setCapability(InternetExplorerDriver.IGNORE_ZOOM_SETTING.toString(), true);
-		//System.setProperty("webdriver.gecko.driver", "drivers/geckodriver.exe");
-		System.setProperty("webdriver.gecko.driver", "F:\\mybrowsers\\firefoxgheko\\geckodriver.exe");
-		driver = new FirefoxDriver(options);
+	public void initBrowser() {
+		System.out.println("selected browser=" + this.getBrowser());
+		if (this.getBrowser().equals("chrome")) {
+			driver = new ChromeDriver(RemoteWebDriverManager.getChromeOptions());
+		}
+		else if (this.getBrowser().equals("firefox")) {
+			driver = new FirefoxDriver(RemoteWebDriverManager.getFirefoxOptions());
+		}
+		else if (this.getBrowser().equals("ie") ||this.getBrowser().equals("ieexplorer")  ||this.getBrowser().equals("internetexplorer") ) {
+			driver = new InternetExplorerDriver(RemoteWebDriverManager.getInternetExplorerOptions());
+		}
+		else if (this.getBrowser().equals("edge")) {
+			driver = new EdgeDriver(RemoteWebDriverManager.getEdgeOptions());
+		}
+		else if (this.getBrowser().equals("opera")) {
+			driver = new OperaDriver(RemoteWebDriverManager.getOperaOptions());
+		}
+		else {
+			//if not specified then use firefox
+			driver = new FirefoxDriver(RemoteWebDriverManager.getFirefoxOptions());
+		}
+		Toolkit toolkit = Toolkit.getDefaultToolkit();
+		int Width = (int) toolkit.getScreenSize().getWidth();
+		int Height = (int)toolkit.getScreenSize().getHeight();
+		driver.manage().window().setSize(new Dimension(Width,Height));
 		
 	}
-	public void initBrowser() {
+	public void initBrowser1() {
 		
 		/*	System.out.println("creating  AppTestManager with default settings");
 			File file = new File("F:\\mybrowsers\\edge\\MicrosoftWebDriver.exe");
