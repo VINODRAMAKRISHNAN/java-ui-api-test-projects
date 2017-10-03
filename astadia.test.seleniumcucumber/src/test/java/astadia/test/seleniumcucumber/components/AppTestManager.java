@@ -4,6 +4,7 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.*;
 
 import java.awt.Toolkit;
 import java.io.File;
@@ -19,7 +20,7 @@ import com.google.common.base.Strings;
 
 public class AppTestManager {
 	
-	WebDriver driver = null;
+	RemoteWebDriver driver = null;
 	String strtrace = "";
 	String output = "";
 	Boolean isError=false;
