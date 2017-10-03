@@ -14,6 +14,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.ie.*;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.*;
 import com.google.common.base.Strings;
 
 public class AppTestManager {
@@ -44,10 +45,20 @@ public class AppTestManager {
 		
 		
 	}
-	
+	public void initBrowser1() {
+		
+	 	FirefoxOptions options = new FirefoxOptions();
+		//options.setCapability(InternetExplorerDriver.INITIAL_BROWSER_URL.toString(), "");
+		//options.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS.toString(), true);
+		//options.setCapability(InternetExplorerDriver.IGNORE_ZOOM_SETTING.toString(), true);
+		//System.setProperty("webdriver.gecko.driver", "drivers/geckodriver.exe");
+		System.setProperty("webdriver.gecko.driver", "F:\\mybrowsers\\firefoxgheko\\geckodriver.exe");
+		driver = new FirefoxDriver(options);
+		
+	}
 	public void initBrowser() {
 		
-			System.out.println("creating  AppTestManager with default settings");
+		/*	System.out.println("creating  AppTestManager with default settings");
 			File file = new File("F:\\mybrowsers\\edge\\MicrosoftWebDriver.exe");
 			
 			System.setProperty("webdriver.edge.driver", file.getAbsolutePath());
@@ -67,7 +78,7 @@ public class AppTestManager {
 			
 		    strtrace = "";
 		    output = "";
-		    System.out.println("AppTestManager created successfully");
+		    System.out.println("AppTestManager created successfully");*/
 		
 	}
 	public void navigateToTargetPage(String url)
