@@ -7,7 +7,7 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 @CucumberOptions(
 		 features = "src/test/java/test/cucumberbasic",
 		 glue= {"test.cucumberbasic"},
-		 plugin = {"json:target/cucumberbasic-report.json","html:target/cucumber-report2/cucumberbasic-report.html"}
+		 plugin = {"json:target/cucumberbasic-report.json","html:target/cucumber-report2/cucumberbasic-report"}
 			
 		)
 
