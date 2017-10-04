@@ -4,8 +4,7 @@ package astadia.test.seleniumcucumber.components;
 
 import astadia.test.seleniumcucumber.components.*;
 import java.awt.Toolkit;
-
-
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.ie.*;
@@ -27,7 +26,7 @@ public class AppTestManager {
 
 	private String getBrowser() {
 		if (Strings.isNullOrEmpty(BROWSER) ) {
-			return "";
+			return "edge";
 		}
 		else {
 			return BROWSER.toLowerCase();
@@ -67,6 +66,7 @@ public class AppTestManager {
 		}
 		else if (this.getBrowser().equals("edge")) {
 			driver = new EdgeDriver(RemoteWebDriverManager.getEdgeOptions());
+			//driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 		}
 		else if (this.getBrowser().equals("opera")) {
 			driver = new OperaDriver(RemoteWebDriverManager.getOperaOptions());
