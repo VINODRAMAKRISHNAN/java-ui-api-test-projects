@@ -3,7 +3,7 @@
 <suite name="Suite1">
   <test name="Regression">
     <classes>
-      <class name="test.api.SampleApiPostTestRunner"/>
+      <class name="test.apiscenariooutline.TTSampleApiPostTestRunner"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
