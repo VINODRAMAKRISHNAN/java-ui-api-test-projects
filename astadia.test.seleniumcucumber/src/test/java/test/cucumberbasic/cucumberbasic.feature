@@ -1,7 +1,6 @@
 Feature: Basic cucumber test
-	In order to avoid silly mistakes
-	As a math idiot
-	I want to be told the sum of two numbers
+	In order to understand the cucumber example
+	Add sum of two numbers and show me the result
 
 @mytag
 Scenario: Add two numbersUnitTest
