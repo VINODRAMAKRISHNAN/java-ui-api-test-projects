@@ -26,7 +26,7 @@ public class AppTestManager {
 
 	private String getBrowser() {
 		if (Strings.isNullOrEmpty(BROWSER) ) {
-			return "edge";
+			return "firefox";
 		}
 		else {
 			return BROWSER.toLowerCase();
