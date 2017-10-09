@@ -1,5 +1,4 @@
 package test.functional;
-import static org.hamcrest.CoreMatchers.is;
 
 import org.testng.Assert;
 import org.testng.annotations.*;
@@ -7,8 +6,7 @@ import org.testng.annotations.*;
 import astadia.test.seleniumcucumber.components.AppTestManager;
 import cucumber.api.java.*;
 import cucumber.api.java.en.*;
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.MatcherAssert.assertThat;
+
 
 public class  StepsSampleScreenFunctional{
 	AppTestManager appTestManager=null;
