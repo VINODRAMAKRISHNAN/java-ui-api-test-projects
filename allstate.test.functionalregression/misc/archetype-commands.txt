@@ -9,6 +9,23 @@ $ mkdir /tmp/archetype
 $ cd /tmp/archetype
 $ mvn archetype:generate -DarchetypeCatalog=local
 
+// installs the project to your local repository (jar, archetype, etc.)
+mvn install
+// AND updates archetype catalog
+mvn install archetype:update-local-catalog
+// calls plugin archetype goal crawl
+mvn archetype:crawl
+
+
+
+
+// use local catalog
+mvn archetype:generate -DarchetypeCatalog=local
+// full coordinate set, my example
+mvn archetype:generate -DarchetypeGroupId=pl.lafk -DarchetypeArtifactId=simple-testng-quickstart -DarchetypeVersion=1.0 -DgroupId=pl.lafk -DartifactId=sample-app
+
+
+
 archetpe:create-from-project -Darchetype.phase=install 
 archetype:create -Darchetype.catalog=local (-Darchetype.groupId, -Darchetype.artifactId -Darchetype.selectVersion,-Darchetype.version )
 archetype:create-from-project -Darchetype.phase=deploy 
@@ -19,3 +36,9 @@ open-archetype in the eclipse:
 version=0.0.1-SNAPSHOT
 groupid=com.allstate.archetype
 articfactid=allstate-functionalregression100
+
+
+insalling-archetype from JAR:NOT WORKING
+mvn install:install-file -Dfile=allstate-functionalregression-quickstart-v1.0-0.0.1.jar -DgroupId=allstate.maven.archetype  -DartifactId=allstate-functionalregression-quickstart-v1.0 -Dversion=0.0.1 -Dpackaging=maven-archetype
+
+
