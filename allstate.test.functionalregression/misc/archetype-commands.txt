@@ -1,0 +1,21 @@
+mvn archetype:create-from-project
+CD to archetype
+mvn clean install (or mvn install archetype:update-local-catalog)  (or mvn archetype:update-local-catalog)
+archetype:crawl
+
+create archetype local catalog
+------------------------------
+$ mkdir /tmp/archetype
+$ cd /tmp/archetype
+$ mvn archetype:generate -DarchetypeCatalog=local
+
+archetpe:create-from-project -Darchetype.phase=install 
+archetype:create -Darchetype.catalog=local (-Darchetype.groupId, -Darchetype.artifactId -Darchetype.selectVersion,-Darchetype.version )
+archetype:create-from-project -Darchetype.phase=deploy 
+mvn archetype:generate -DarchetypeCatalog=http://project.org
+
+
+open-archetype in the eclipse:
+version=0.0.1-SNAPSHOT
+groupid=com.allstate.archetype
+articfactid=allstate-functionalregression100

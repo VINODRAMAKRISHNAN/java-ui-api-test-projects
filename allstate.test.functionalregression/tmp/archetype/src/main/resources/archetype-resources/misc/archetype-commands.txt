@@ -1,0 +1,23 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+mvn archetype:create-from-project
+CD to archetype
+mvn clean install (or mvn install archetype:update-local-catalog)  (or mvn archetype:update-local-catalog)
+
+create archetype local catalog
+------------------------------
+${symbol_dollar} mkdir /tmp/archetype
+${symbol_dollar} cd /tmp/archetype
+${symbol_dollar} mvn archetype:generate -DarchetypeCatalog=local
+
+archetpe:create-from-project -Darchetype.phase=install 
+archetype:create -Darchetype.catalog=local (-Darchetype.groupId, -Darchetype.artifactId -Darchetype.selectVersion,-Darchetype.version )
+archetype:create-from-project -Darchetype.phase=deploy 
+mvn archetype:generate -DarchetypeCatalog=http://project.org
+
+
+open-archetype in the eclipse:
+version=${version}
+groupid=com.allstate.archetype
+articfactid=allstate-functionalregression100
