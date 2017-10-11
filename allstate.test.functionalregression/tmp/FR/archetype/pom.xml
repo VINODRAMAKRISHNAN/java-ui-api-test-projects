@@ -2,12 +2,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>allstate.maven.archetype</groupId>
-  <artifactId>allstate-functionalregression-quickstart-v1.0</artifactId>
+  <groupId>custom.maven.archetype</groupId>
+  <artifactId>custom-maven-functionalregression-quickstart-v0.0.1</artifactId>
   <version>0.0.1</version>
   <packaging>maven-archetype</packaging>
 
-  <name>allstate.test.functionalregression-archetype-v1.0</name>
+  <name>custom-maven-functionalregression-quickstart-v0.0.1</name>
 
   <build>
     <extensions>
@@ -28,5 +28,5 @@
     </pluginManagement>
   </build>
 
-  <description>allstate-functionalregression-quickstart-v1.0</description>
+  <description>custom-maven-functionalregression-quickstart-v0.0.1</description>
 </project>
