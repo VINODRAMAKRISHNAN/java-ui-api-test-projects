@@ -3,11 +3,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>custom.maven.archetype</groupId>
-  <artifactId>custom-maven-functionalregression-quickstart-v0.0.1</artifactId>
+  <artifactId>custom-maven-functionalregression-quickstart</artifactId>
   <version>0.0.1</version>
   <packaging>maven-archetype</packaging>
 
-  <name>custom-maven-functionalregression-quickstart-v0.0.1</name>
+  <name>custom-maven-functionalregression-quickstart</name>
 
   <build>
     <extensions>
@@ -28,5 +28,5 @@
     </pluginManagement>
   </build>
 
-  <description>custom-maven-functionalregression-quickstart-v0.0.1</description>
+  <description>custom-maven-functionalregression-quickstart</description>
 </project>
