@@ -13,5 +13,5 @@ Post api with multiple inputs and excute amd validate the against the input supp
      Then I execute POST API and the response result should be validated against the following table:
       | stId  | stname  | stAge  | stStatus  | adStreet  | adZip|
       | 1     | aaa     | 11     | true      | st1       | 4000 |
-      | 2     | aaa2    | 112    | true      | st2       | 5000 |
+      | 2     | aaa23    | 112    | true      | st2       | 5000 |
       | 3     | aaa3    | 113    | true      | st3       | 6000 |
