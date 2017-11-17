@@ -16,7 +16,7 @@ pipeline{
 	        	print "BROWSER-TYPE2"
 				print "TEST-TYPE = ${params.testtype}"
 		        dir ('tee.demo.fr.cucumber') {
-		           bat 'mvn clean compile'
+		           
 		        }
 		    }
 	    }
