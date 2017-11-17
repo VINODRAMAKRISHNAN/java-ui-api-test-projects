@@ -8,27 +8,16 @@ pipeline{
 			steps{
 			   	print "BROWSER-TYPE-VINOD"
 				
-				def tst
-				fileLoader.withGit('https://github.com/VINODRAMAKRISHNAN/java-ui-api-test-projects.git', 'master', '0f74659a-05e0-4f91-bd01-ff78f95820e5', 'TEST-VINOD') {
-					tst = fileLoader.load('astadia.test.seleniumcucumber/JenkinsFile');
-				}
-				print "BROWSER-TYPE111ww"
-   
 			}
-				
 		}
-	    }
 	    
-	    stage('Validate Source - Functional Test'){
-	        steps{	
-		        dir ('tee.demo.fr.cucumber') {
-		           print "BROWSER-TYPE2"
-		        }
-		    }
-	    }
-	    
-	  
-	   
+	    	stage('Validate Source - Functional Test'){
+			steps{	
+				dir ('tee.demo.fr.cucumber') {
+				   print "BROWSER-TYPE2"
+				}
+			}
+	    	}
 
 	    stage('Run Functional Test'){
 	        steps{
