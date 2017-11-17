@@ -6,15 +6,13 @@ pipeline{
 	options {
     	skipDefaultCheckout true
   	}
-	fileLoader.withGit('https://github.com/VINODRAMAKRISHNAN/java-ui-api-test-projects.git', 'master', '0f74659a-05e0-4f91-bd01-ff78f95820e5', 'TEST-VINOD') {
-		test = fileLoader.load('astadia.test.seleniumcucumber/JenkinsFile');
-	}
+	
 	stages{
 		stage('Clean and Checkout'){
 			steps{
 				print "BROWSER-TYPE2"
 				
-				
+			}
 		}
 	    
 	    	stage('Validate Source - Functional Test'){
