@@ -7,10 +7,6 @@ pipeline{
 		stage('Clean and Checkout'){
 			steps{
 				def tst
-				fileLoader.withGit('https://github.com/VINODRAMAKRISHNAN/java-ui-api-test-projects.git', 'master', '0f74659a-05e0-4f91-bd01-ff78f95820e5', 'TEST-VINOD') {
-					print "BROWSER-TYPE-VINOD"
-				}
-			   	
 				
 			}
 		}
