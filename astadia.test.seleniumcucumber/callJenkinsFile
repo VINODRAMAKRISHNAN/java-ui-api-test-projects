@@ -6,7 +6,7 @@ pipeline{
 	stages{
 		stage('Clean and Checkout'){
 			steps{
-				
+				print "BROWSER-TYPE2"
 				
 			}
 		}
