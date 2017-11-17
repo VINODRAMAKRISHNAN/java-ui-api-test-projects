@@ -1,0 +1,34 @@
+pipeline{
+	agent {node {label "TEST-VINOD"} }
+	options {
+    	skipDefaultCheckout true
+  	}
+	stages{
+		stage('Clean and Checkout'){
+			steps{
+			   print "BROWSER-TYPE-VINOD"
+				
+			}
+	    }
+	    
+	    stage('Validate Source - Functional Test'){
+	        steps{
+	        	print "BROWSER-TYPE2"
+				print "TEST-TYPE = ${params.testtype}"
+		        dir ('tee.demo.fr.cucumber') {
+		           bat 'mvn clean compile'
+		        }
+		    }
+	    }
+	    
+	  
+	   
+
+	    stage('Run Functional Test'){
+	        steps{
+		        print "BROWSER-TYPE33"
+		    }
+	    }
+    }
+
+}
