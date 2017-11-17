@@ -1,3 +1,4 @@
+def test = 'UNKNOWN'
 pipeline{
 	agent {node {label "TEST-VINOD"} }
 	def environment
@@ -8,7 +9,7 @@ pipeline{
 		stage('Clean and Checkout'){
 			steps{
 				print "BROWSER-TYPE2"
-				
+				test =
 			}
 		}
 	    
