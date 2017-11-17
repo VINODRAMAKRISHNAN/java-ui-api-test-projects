@@ -9,8 +9,8 @@ pipeline{
 			   print "BROWSER-TYPE-VINOD"
 			   steps{
 				cleanWs();
-	        	git credentialsId: 'vinod.ramakrishnan@hotmail.com', url: 'https://github.com/VINODRAMAKRISHNAN/java-ui-api-test-projects.git'
-	    	  }
+	        		git credentialsId: '0f74659a-05e0-4f91-bd01-ff78f95820e5', url: 'https://github.com/VINODRAMAKRISHNAN/java-ui-api-test-projects.git'
+			   }
 				
 			}
 	    }
