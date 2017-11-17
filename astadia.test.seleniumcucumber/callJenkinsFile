@@ -1,4 +1,5 @@
 def test = 'UNKNOWN'
+
 pipeline{
 	agent {node {label "TEST-VINOD"} }
 	
@@ -11,9 +12,8 @@ pipeline{
 				print "BROWSER-TYPE2"
 				
 				fileLoader.withGit('https://github.com/VINODRAMAKRISHNAN/java-ui-api-test-projects.git', 'master', '0f74659a-05e0-4f91-bd01-ff78f95820e5', 'TEST-VINOD') {
-    					test = fileLoader.load('astadia.test.seleniumcucumber/JenkinsFile');
+					test = fileLoader.load('astadia.test.seleniumcucumber/JenkinsFile');
 				}
-			}
 		}
 	    
 	    	stage('Validate Source - Functional Test'){
