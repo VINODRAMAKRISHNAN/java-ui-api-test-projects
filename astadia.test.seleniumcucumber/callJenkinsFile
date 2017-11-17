@@ -1,7 +1,7 @@
 def test = 'UNKNOWN'
 pipeline{
 	agent {node {label "TEST-VINOD"} }
-	def environment
+	
 	options {
     	skipDefaultCheckout true
   	}
