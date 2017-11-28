@@ -5,6 +5,17 @@ def createPipeline(projectName) {
 	def ENV_GITURL = "${env.CUR_GITURL}";
 	def ENV_GITCREDID = "${env.CUR_GITCREDID}";
 	println("The BRANCH= ${env.CUR_GITBRANCH}")
+	cleanWs();	
+	checkout([
+		$class: 'GitSCM', 
+		branches: [[name: '*/'+ env.CUR_GITBRANCH]], 
+		doGenerateSubmoduleConfigurations: false, 
+		extensions: [], submoduleCfg: [], 
+		userRemoteConfigs: [[
+			credentialsId: '' + env.CUR_GITCREDID, 
+			url: '' + env.CUR_GITURL
+		]]
+	])
 	println("The BRANCH2= $ENV_GITBRANCH")
 }
 return this
