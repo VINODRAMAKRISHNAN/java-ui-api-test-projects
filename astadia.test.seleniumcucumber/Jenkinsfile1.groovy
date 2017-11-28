@@ -2,7 +2,7 @@ pipeline{
 	agent {node {label "TEST-VINOD"} }
 	environment {
             ENV_NAME = "${env.CUR_BRANCH}";
-	    ENV_CHOUT = env.MY_CHECKOUT;
+	    //ENV_CHOUT = env.MY_CHECKOUT;
         }
 	options {
     	skipDefaultCheckout true
