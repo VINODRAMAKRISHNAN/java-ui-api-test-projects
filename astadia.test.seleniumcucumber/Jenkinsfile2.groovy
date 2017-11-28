@@ -6,7 +6,7 @@ def createPipeline(projectName) {
 	    ENV_GITURL = "${env.CUR_GITURL}";
 	    ENV_GITCREDID = "${env.CUR_GITCREDID}";
 	}
-	println("The BRANCH=" + ENV_GITBRANCH )
+	println("The BRANCH= ${env.ENV_GITBRANCH}")
 }
 return this
 
