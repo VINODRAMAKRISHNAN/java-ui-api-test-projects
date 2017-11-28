@@ -2,6 +2,8 @@ pipeline{
 	agent {node {label "TEST-VINOD"} }
 	environment {
             ENV_NAME = "${env.CUR_BRANCH}"
+	    ENV_CHECKOUTSTRING="${env.MY_CHECKOUT}"
+	    ENV_CHECKOUT = env.MY_CHECKOUT
         }
 	options {
     	skipDefaultCheckout true
@@ -9,6 +11,7 @@ pipeline{
 	stages{
 		stage('Clean and Checkout'){
 			steps{
+				print "MY_CHECKOUTSTRING = ${env.ENV_CHECKOUTSTRING}"
 				print "CURRENT-BRANCH = ${env.ENV_NAME}"
 			   	print "BROWSER-TYPE-VINOD"
 				cleanWs();
