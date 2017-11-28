@@ -18,6 +18,14 @@ def createPipeline(projectName) {
 			]]
 		])
 		println("The BRANCH2= $ENV_GITBRANCH")	
+		
+	stage('Validate Source - Functional Test')		
+		dir ('tee.demo.fr.cucumber') {
+		   print "BROWSER-TYPE2"
+		}
+		
+	stage('Run Functional Test')
+		print "BROWSER-TYPE33"
 }
 return this
 
