@@ -10,7 +10,7 @@ pipeline{
 	stages{
 		stage('Clean and Checkout'){
 			steps{
-				print "MY_CHECKOUTSTRING = ${env.ENV_CHOUT}"
+				print "MY_CHECKOUTSTRING = ${env.ENV_NAME}"
 				print "CURRENT-BRANCH = ${env.ENV_NAME}"
 			   	print "BROWSER-TYPE-VINOD"
 				cleanWs();
