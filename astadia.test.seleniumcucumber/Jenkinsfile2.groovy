@@ -26,8 +26,11 @@ def createPipeline(projectName) {
 		}
 		
 	stage('Run Functional Test')
-		print "BROWSER-TYPE33"
-		bat 'mvn test'
+		dir ('astadia.test.seleniumcucumber') {
+		   print "BROWSER-TYPE33"
+		   bat 'mvn test'
+		}
+		
 }
 
 return this
