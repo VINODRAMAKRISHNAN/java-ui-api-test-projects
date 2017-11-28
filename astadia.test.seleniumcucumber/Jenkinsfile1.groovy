@@ -1,7 +1,7 @@
 pipeline{
 	agent {node {label "TEST-VINOD"} }
 	environment {
-            ENV_NAME = "${env.CUR_BRANCH}";
+            ENV_BRANCH = "${env.CUR_BRANCH}";
 	}
 	options {
     	skipDefaultCheckout true
@@ -9,12 +9,12 @@ pipeline{
 	stages{
 		stage('Clean and Checkout'){
 			steps{
-				print "CURRENT-BRANCH = ${env.ENV_NAME}"
+				print "CURRENT-BRANCH = ${env.CUR_BRANCH}"
 			   	print "BROWSER-TYPE-VINOD"
 				cleanWs();
 				checkout([
 					$class: 'GitSCM', 
-					branches: [[name: '*/'+ env.ENV_NAME]], 
+					branches: [[name: '*/'+ env.CUR_BRANCH]], 
 					doGenerateSubmoduleConfigurations: false, 
 					extensions: [], 
 					submoduleCfg: [], 
