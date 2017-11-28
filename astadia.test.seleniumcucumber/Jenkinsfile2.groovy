@@ -20,12 +20,14 @@ def createPipeline(projectName) {
 		println("The BRANCH2= $ENV_GITBRANCH")	
 		
 	stage('Validate Source - Functional Test')		
-		dir ('tee.demo.fr.cucumber') {
+		dir ('java-ui-api-test-projects\astadia.test.seleniumcucumber') {
 		   print "BROWSER-TYPE2"
+		   bat 'mvn clean'
 		}
 		
 	stage('Run Functional Test')
 		print "BROWSER-TYPE33"
+		bat 'mvn test'
 }
 
 return this
