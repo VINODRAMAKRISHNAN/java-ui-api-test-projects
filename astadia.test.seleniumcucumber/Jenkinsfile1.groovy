@@ -1,9 +1,9 @@
 pipeline{
 	agent {node {label "TEST-VINOD"} }
 	environment {
-            ENV_GITBRANCH = "${env.GITCUR_BRANCH}";
-	    ENV_GITURL = "${env.GITCUR_URL}";
-	    ENV_GITCREDID = "${env.GITCREDID}";
+            ENV_GITBRANCH = "${env.CUR_GITBRANCH}";
+	    ENV_GITURL = "${env.CUR_GITURL}";
+	    ENV_GITCREDID = "${env.CUR_GITCREDID}";
 	}
 	options {
     	skipDefaultCheckout true
@@ -12,7 +12,9 @@ pipeline{
 		stage('Clean and Checkout'){
 			steps{
 				
-				//print "CURRENT-BRANCH = ${env.ENV_BRANCH}"
+				print "CURRENT-BRANCH = ${env.ENV_GITBRANCH}"
+				print "CURRENT-URL = ${env.ENV_GITURL}"
+				print "CURRENT-CREDID = ${env.ENV_GITCREDID}"
 			   	print "BROWSER-TYPE-VINOD"
 				cleanWs();	
 				checkout([$class: 'GitSCM', branches: [[name: '*/'+ env.ENV_GITBRANCH]], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '' + env.ENV_GITCREDID, url: '' + env.ENV_GITURL]]])
