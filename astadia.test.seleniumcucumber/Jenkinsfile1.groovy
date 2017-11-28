@@ -3,7 +3,8 @@ pipeline{
 	environment {
             ENV_NAME = "${env.CUR_BRANCH}";
 	    //ENV_CHOUT = env.MY_CHECKOUT;
-        }
+	    ENV_CHECKOUT = checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '0f74659a-05e0-4f91-bd01-ff78f95820e5', url: 'https://github.com/VINODRAMAKRISHNAN/java-ui-api-test-projects.git']]]);
+      }
 	options {
     	skipDefaultCheckout true
   	}
