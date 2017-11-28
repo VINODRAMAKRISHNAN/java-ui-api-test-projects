@@ -1,7 +1,7 @@
 pipeline{
 	agent {node {label "TEST-VINOD"} }
 	environment {
-            ENV_BRANCH = "${env.CUR_GIT_BRANCH}";
+            ENV_BRANCH = "${env.CUR_BRANCH}";
 	}
 	options {
     	skipDefaultCheckout true
