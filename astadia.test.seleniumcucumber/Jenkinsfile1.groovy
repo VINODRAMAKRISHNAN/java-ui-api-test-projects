@@ -14,7 +14,7 @@ pipeline{
 				cleanWs();
 				checkout([
 					$class: 'GitSCM', 
-					branches: [[name: '*/'+ env.CUR_BRANCH]], 
+					branches: [[name: '*/'+ env.ENV_BRANCH]], 
 					doGenerateSubmoduleConfigurations: false, 
 					extensions: [], 
 					submoduleCfg: [], 
