@@ -27,7 +27,6 @@ def createPipeline(projectName) {
 	stage('Run Functional Test')
 		print "BROWSER-TYPE33"
 }
-
 return this
 
 
