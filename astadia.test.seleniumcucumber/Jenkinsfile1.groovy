@@ -14,13 +14,13 @@ pipeline{
 				cleanWs();
 				checkout([
 					$class: 'GitSCM', 
-					branches: [[name: '*/'+ env.CUR_BRANCH]], 
+					branches: [[name: '*/${env.CUR_BRANCH}']], 
 					doGenerateSubmoduleConfigurations: false, 
 					extensions: [], 
 					submoduleCfg: [], 
 					userRemoteConfigs: [[
-						credentialsId: '' + env.CUR_GIT_CREDID, 
-						url: '' + env.CUR_GIT_URL
+						credentialsId: '${env.CUR_GIT_CREDID}' , 
+						url: '${env.CUR_GIT_URL}'
 					]]
 				])
 				//checkout([$class: 'GitSCM', branches: [[name: '*/'+ env.ENV_NAME]], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '0f74659a-05e0-4f91-bd01-ff78f95820e5', url: 'https://github.com/VINODRAMAKRISHNAN/java-ui-api-test-projects.git']]])
