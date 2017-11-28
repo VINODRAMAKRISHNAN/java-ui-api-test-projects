@@ -20,7 +20,7 @@ def createPipeline(projectName) {
 		println("The BRANCH2= $ENV_GITBRANCH")	
 		
 	stage('Validate Source - Functional Test')		
-		dir ('java-ui-api-test-projects\astadia.test.seleniumcucumber') {
+		dir ('astadia.test.seleniumcucumber') {
 		   print "BROWSER-TYPE2"
 		   bat 'mvn clean'
 		}
