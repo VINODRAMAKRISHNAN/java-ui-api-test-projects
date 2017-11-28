@@ -9,12 +9,12 @@ pipeline{
 	stages{
 		stage('Clean and Checkout'){
 			steps{
-				print "CURRENT-BRANCH = ${env.ENV_BRANCH}"
+				//print "CURRENT-BRANCH = ${env.ENV_BRANCH}"
 			   	print "BROWSER-TYPE-VINOD"
 				cleanWs();	
 				checkout([
 					$class: 'GitSCM', 
-					branches: [[name: '*/'+ env.ENV_BRANCH]], 
+					branches: [[name: '*/master']], 
 					doGenerateSubmoduleConfigurations: false, 
 					extensions: [], 
 					submoduleCfg: [], 
