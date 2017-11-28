@@ -1,9 +1,9 @@
 pipeline{
 	agent {node {label "TEST-VINOD"} }
 	environment {
-            ENV_BRANCH = "${env.CUR_BRANCH}";
-	    ENV_URL = "${env.CUR_URL}";
-	    ENV_CREDID = "${env.CREDID}";
+            ENV_GITBRANCH = "${env.GITCUR_BRANCH}";
+	    ENV_GITURL = "${env.GITCUR_URL}";
+	    ENV_GITCREDID = "${env.GITCREDID}";
 	}
 	options {
     	skipDefaultCheckout true
@@ -15,7 +15,7 @@ pipeline{
 				//print "CURRENT-BRANCH = ${env.ENV_BRANCH}"
 			   	print "BROWSER-TYPE-VINOD"
 				cleanWs();	
-				checkout([$class: 'GitSCM', branches: [[name: '*/'+ env.ENV_BRANCH]], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '' + env.ENV_CREDID, url: '' + env.ENV_URL]]])
+				checkout([$class: 'GitSCM', branches: [[name: '*/'+ env.ENV_GITBRANCH]], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '' + env.ENV_GITCREDID, url: '' + env.ENV_GITURL]]])
 				//checkout([$class: 'GitSCM', branches: [[name: '*/'+ env.ENV_BRANCH]], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '0f74659a-05e0-4f91-bd01-ff78f95820e5', url: 'https://github.com/VINODRAMAKRISHNAN/java-ui-api-test-projects.git']]])
 				//checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '0f74659a-05e0-4f91-bd01-ff78f95820e5', url: 'https://github.com/VINODRAMAKRISHNAN/java-ui-api-test-projects.git']]])
 				print "BROWSER-TYPE111ww"
